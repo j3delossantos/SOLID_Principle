@@ -1,15 +1,18 @@
 ﻿using OpenClose;
 
-CalculateSalaryMonthly(new List<object>() {
+ShowSalaryMonthly(new List<Employee>() {
     new EmployeeFullTime("Pepito Pérez", 160),
-    new EmployeePartTime("Manuel Lopera", 180)
+    new EmployeePartTime("Manuel Lopera", 180),
+    new EmployeePartTime("Ramon Then", 200)
 });
 
 
-void CalculateSalaryMonthly(List<object> employees) 
+void ShowSalaryMonthly(List<Employee> employees) 
 {
     foreach (var employee in employees)
     {
+        Console.WriteLine($"Empleado: {employee.Fullname}, Pago: {employee.CalculateSalaryMonthly():C1} ");
+        /*
         if (employee is EmployeeFullTime) 
         {
             decimal hourValue = 30000M;
@@ -29,6 +32,7 @@ void CalculateSalaryMonthly(List<object> employees)
             }
             Console.WriteLine($"Empleado: {employeePartTime.Fullname}, Pago: {salary:C1} ");
         }
+        */
     }
 
 }
